@@ -2,13 +2,13 @@
 
 import sys
 #picking up the source and destination file from cmd
-files=sys.argv[1:3]
+files=sys.argv[1:]
 
 #extracting the source file
 src_file=files[0]
 
 #extracting the destination file
-dst_file=files[1]
+dst_file= "/root/Desktop/Python/a"
 
 #opening source file
 f1=open(src_file,"r")

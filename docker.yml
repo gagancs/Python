@@ -1,0 +1,33 @@
+---
+ - hosts: dockerdns
+   tasks: 
+         - name: setting up the core-site.xml
+           copy:
+                src: /root/Desktop/Python/docker_setupfiles/core-site-ddn.xml
+                dest: /etc/hadoop/core-site.xml
+
+         - name: hdfs-site xml copying 
+           copy: 
+                src: /root/Desktop/Python/docker_setupfiles/hdfs-site-ddn.xml
+                dest: /etc/hadoop/hdfs-site.xml
+
+         - name: copying mapred-site.xml
+           copy: 
+                src: /root/Desktop/Python/docker_setupfiles/mapred-site-ddn.xml
+                dest: /etc/hadoop/mapred-site.xml
+
+       # - name: Disable Domain firewall
+         # win_firewall:
+          #state: disabled
+          #profiles:
+          #- Domain
+          #tags: disable_firewall
+
+         #- name: SLinux off
+         #  command: setenforce 0
+
+         - name: starting datanode service
+           command: hadoop-daemon.sh start datanode
+
+         - name: starting mapred service
+           command: hadoop-daemon.sh start tasktracker  #bcoz of datanode

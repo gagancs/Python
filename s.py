@@ -8,5 +8,5 @@ s=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 while True:
 	msg=raw_input("enter your data: ")
 	s.sendto(msg,("127.0.0.1", 8888))
-	time.sleep(1)
+	time.sleep(5)
 	print x.recvfrom(100)
