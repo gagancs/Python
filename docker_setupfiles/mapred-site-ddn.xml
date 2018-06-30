@@ -6,6 +6,6 @@
 <configuration>
 <property>
 <name>mapred.task.tracker</name>
-<value>172.17.0.1:10010</value>
+<value>172.17.0.2:10010</value>
 </property>
 </configuration>
