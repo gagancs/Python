@@ -16,8 +16,11 @@
                 src: /root/Desktop/Python/docker_setupfiles/mapred-site-dnn.xml
                 dest: /etc/hadoop/mapred-site.xml
 
-	 - name: formatting namenode
-	   command: hadoop namenode -format
+#	 - name: formatting namenode
+#	   command: hadoop namenode -format
+
+         - name: formatting nn
+           command: hadoop namenode -format        
 
        # - name: Disable Domain firewall
          # win_firewall:

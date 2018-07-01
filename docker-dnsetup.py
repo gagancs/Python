@@ -17,7 +17,7 @@ for i in range(nodes):
 		#creating conatiners for DataNodes OS
 		os.system("docker run -itd --name node"+i+"  centos6:hadoopv1	" )
 		os.system("docker exec node"+i+" service sshd restart")
-		os.system("docker exec node"+i+" hostnamectl set-hostname root@namenode")
+		#os.system("docker exec node"+i+" hostnamectl set-hostname root@namenode")
 		f1.write("\n[dockernns]\n")
 		# getting ips and assigning
 		#ip=str(os.system("docker exec node"+i+"  hostname -i"))
@@ -34,7 +34,7 @@ for i in range(nodes):
 		#creating conatiners for DataNodes OS
 		os.system("docker run -itd --name node"+i+"  centos6:hadoopv1	" )
 		os.system("docker exec node"+i+" service sshd restart")
-		os.system("docker exec node"+i+" hostnamectl set-hostname root@datanode"+i)
+		#os.system("docker exec node"+i+" hostnamectl set-hostname root@datanode"+i)
 		f1.write("\n[dockerdns]\n")
 		# getting ips and assigning
 		#ip=str(os.system("docker exec node"+i+"  hostname -i"))
